@@ -2,3 +2,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===== REUSABLE CSS CLASS ===== */
+@layer components {
+  /* section class */
+  .section {
+    @apply pt-32 pb-16;
+  }
+  .section-title {
+    @apply text-[42px] text-gray-900 font-bold pb-4;
+  }
+  .section-text {
+    @apply text-gray-900 leading-[170%] pb-8;
+  }
+
+  /* button class */
+  .button {
+    @apply h-[55px] flex justify-center items-center py-4 px-8 bg-gray-900 rounded-full font-bold text-white;
+  }
+
+  /* container class */
+  .container {
+    @apply max-w-[1024px] w-full mx-auto;
+  }
+}

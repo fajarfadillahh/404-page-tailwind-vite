@@ -14,12 +14,25 @@
       rel="stylesheet"
     />
 
+    <!-- On page load or when changing themes, best to add inline in `head` to avoid FOUC -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
     <!-- 🌙 ☀️ -->
   </head>
-  <body class="font-body font-medium">
+  <body class="font-body font-medium dark:bg-black">
     <!-- ===== HEADER SECTION ===== -->
     <header
-      class="header fixed w-full top-0 left-0 bg-yellow z-50 transition-all duration-300"
+      class="header fixed w-full top-0 left-0 bg-yellow z-50 transition-all duration-300 dark:bg-black"
       id="header"
     >
       <div
@@ -27,7 +40,7 @@
       >
         <a
           href="#"
-          class="header__logo text-[18px] text-black font-bold uppercase"
+          class="header__logo text-[18px] text-black font-bold uppercase dark:text-yellow"
           >xcompany</a
         >
 
@@ -57,18 +70,23 @@
             class="header__theme absolute top-6 right-6 text-[1.5rem] cursor-pointer md:static"
             id="theme-toggle"
           >
-            <span class="header__theme-icon" id="themeToggleDarkIcon">🌙</span>
+            <span class="header__theme-icon hidden" id="themeToggleDarkIcon"
+              >🌙</span
+            >
+            <span class="header__theme-icon hidden" id="themeToggleLightIcon"
+              >☀️</span
+            >
           </div>
 
           <a
             href="#"
-            class="header__button button mt-6 bg-white text-black md:mt-0 md:bg-black md:text-white"
+            class="header__button button mt-6 bg-white text-black md:mt-0 md:bg-black md:text-white dark:bg-black dark:text-white md:dark:bg-yellow md:dark:text-black"
             >Register</a
           >
         </div>
 
         <div
-          class="header__toggle inline-flex text-[1.5rem] text-black cursor-pointer md:hidden"
+          class="header__toggle inline-flex text-[1.5rem] text-black cursor-pointer md:hidden dark:text-yellow"
           id="header-toggle"
         >
           <i class="bx bx-grid-alt"></i>
@@ -84,17 +102,24 @@
           class="home__container container grid content-center gap-10 xl:grid-cols-2 xl:items-center"
         >
           <div class="home__data text-center justify-self-center xl:text-left">
-            <span class="home__subtitle inline-block text-black pb-2"
+            <span
+              class="home__subtitle inline-block text-black pb-2 dark:text-yellow"
               >Error 404</span
             >
-            <h1 class="home__title section-title xs:text-[48px] xl:text-[58px]">
+            <h1
+              class="home__title section-title xs:text-[48px] xl:text-[58px] dark:text-yellow"
+            >
               Hey Buddy
             </h1>
-            <p class="home__text section-text">
+            <p class="home__text section-text dark:text-yellow">
               We can't seem to find the page <br />
               you are looking for.
             </p>
-            <a href="#" class="home__button button inline-block">Go Home</a>
+            <a
+              href="#"
+              class="home__button button inline-block dark:bg-yellow dark:text-black"
+              >Go Home</a
+            >
           </div>
 
           <div class="home__img justify-self-center">
@@ -110,7 +135,7 @@
         </div>
 
         <div
-          class="home__footer flex justify-center items-center self-end gap-2 text-[14px]"
+          class="home__footer flex justify-center items-center self-end gap-2 text-[14px] dark:text-yellow"
         >
           <span>0812 3456 7890</span>
           <span>|</span>

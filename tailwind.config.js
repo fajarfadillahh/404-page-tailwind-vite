@@ -9,6 +9,11 @@ module.exports = {
       lg: "968px",
       xl: "1024px",
     },
+    colors: {
+      yellow: "#dfaa4e",
+      black: "#161513",
+      white: "#ffffff",
+    },
     fontFamily: {
       body: ["Space Grotesk", "sans-serif"],
     },

@@ -37,7 +37,7 @@
   }
 }
 .header__link {
-  @apply text-white;
+  @apply text-white md:text-black;
 }
 /* show menu */
 .header__menu.show-menu {

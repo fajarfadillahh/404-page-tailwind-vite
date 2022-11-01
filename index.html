@@ -36,7 +36,7 @@
           id="header-menu"
         >
           <ul
-            class="header__list flex flex-col gap-6 md:flex-row md:absolute md:left-[50%] md:-translate-x-[50%]"
+            class="header__list flex flex-col gap-6 md:flex-row md:absolute md:left-[50%] md:-translate-x-[50%] xl:gap-10"
           >
             <li class="header__item">
               <a href="#" class="header__link">Home</a>
@@ -80,12 +80,16 @@
     <main class="main overflow-hidden">
       <!-- ===== HOME SECTION ===== -->
       <section class="home section grid h-screen">
-        <div class="home__container container grid content-center gap-10">
-          <div class="home__data text-center justify-self-center">
+        <div
+          class="home__container container grid content-center gap-10 xl:grid-cols-2 xl:items-center"
+        >
+          <div class="home__data text-center justify-self-center xl:text-left">
             <span class="home__subtitle inline-block text-black pb-2"
               >Error 404</span
             >
-            <h1 class="home__title section-title xs:text-[48px]">Hey Buddy</h1>
+            <h1 class="home__title section-title xs:text-[48px] xl:text-[58px]">
+              Hey Buddy
+            </h1>
             <p class="home__text section-text">
               We can't seem to find the page <br />
               you are looking for.
@@ -97,10 +101,10 @@
             <img
               src="./src/img/ghost-img.png"
               alt=""
-              class="w-[250px] animate-[floaty_1.8s_infinite_alternate]"
+              class="w-[250px] animate-[floaty_1.8s_infinite_alternate] xl:w-[400px]"
             />
             <div
-              class="home__shadow w-[130px] h-[24px] bg-[hsla(38,21%,19%,0.16)] mx-auto rounded-full blur-[7px] animate-[shadow_1.8s_infinite_alternate]"
+              class="home__shadow w-[130px] h-[24px] bg-[hsla(38,21%,19%,0.16)] mx-auto rounded-full blur-[7px] animate-[shadow_1.8s_infinite_alternate] xl:w-[250px] xl:h-[40px]"
             ></div>
           </div>
         </div>

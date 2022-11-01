@@ -1,3 +1,6 @@
+/* ===== FONT GOOGLE ===== */
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
+
 /* ===== Add the Tailwind directives to your CSS ===== */
 @tailwind base;
 @tailwind components;
@@ -23,6 +26,20 @@
 
   /* container class */
   .container {
-    @apply max-w-[1024px] w-full mx-auto;
+    @apply max-w-[1024px] w-[calc(100%-3rem)] mx-auto;
   }
+}
+
+/* ===== HEADER SECTION ===== */
+@media screen and (max-width: 767px) {
+  .header__menu {
+    @apply fixed w-[85%] top-28 left-0 right-0 mx-auto text-center p-8 bg-black rounded-3xl transition-all duration-300 opacity-0 scale-y-0 origin-top;
+  }
+}
+.header__link {
+  @apply text-white;
+}
+/* show menu */
+.header__menu.show-menu {
+  @apply opacity-100 scale-y-100;
 }
